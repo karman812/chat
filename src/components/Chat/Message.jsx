@@ -1,7 +1,7 @@
 import React from "react";
 
 let Message = (props) => {
-    return  (
+    return (
         <div className={props.userName == props.myUserName ? 'message myMessage' : 'message'}>
             <div><span>{props.time}</span></div>
             <p>{props.text}</p>

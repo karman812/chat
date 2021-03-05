@@ -7,16 +7,21 @@ import {setUsers, setJoined, addNewMessage, setDataThunkCreator} from "./redux/c
 
 let App = (props) => {
     const onLogin = async (obj) => {
+        //change user status to joined
         props.setJoined(obj)
+        //transfer data to socket
         socket.emit('ROOM:JOIN', obj);
+        // make a get request to the server and set response data to state
         props.setDataThunkCreator(obj)
     };
 
     const setUsers = (users) => {
+        //set users to state
         props.setUsers(users)
     };
 
     const addMessage = (message) => {
+        //add new message to state
         props.addNewMessage(message)
     };
 
